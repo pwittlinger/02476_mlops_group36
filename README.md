@@ -11,7 +11,7 @@ Our aim is to perform abstractive and extractive text summarization on news arti
 
 ### What framework are you going to use (Kornia, Transformer, Pytorch-Geometrics)
 The [Transformers](https://github.com/huggingface/transformers) framework provided by HuggingFace provides high-performance NLP models suitable for a wide range of application - including text summarization.
-### How to you intend to include the framework into your project
+
 
 ### What data are you going to run on (initially, may change)
 The [CNN Dailymail](https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail) Dataset contains approximately 300k new articles.
@@ -20,6 +20,7 @@ If time allows, we may expand our model by the [XSum dataset and additional arti
 
 ### What deep learning models do you expect to use
 Due to both time- and computational constraints, we will refer to pre-trained models, which we intend to fine-tune on the dataset.
+As the dataset is fairly popular for text summarization, there are several models fitted to it already available. We will use [BigBirdPegasus](https://huggingface.co/docs/transformers/model_doc/bigbird_pegasus) or [Pegasus](https://huggingface.co/docs/transformers/model_doc/pegasus), and might extend using [DistilBERT](https://huggingface.co/docs/transformers/model_doc/distilbert) or [ALBERT](https://huggingface.co/docs/transformers/model_doc/albert)
 
 
 ## Checklist
