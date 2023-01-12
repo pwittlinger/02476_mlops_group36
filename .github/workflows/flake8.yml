@@ -1,4 +1,4 @@
-name: "Run tests"
+name: "Run formatting checks"
 
 on:
   push:
@@ -23,7 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install -r requirements_tests.txt
-    - name: Test with pytest
+    - name: Install auto-formatter
+      run: |
+        pip install black
+        black .
+    - name: Run flake8
       run: |
         pip install flake8
         flake8 .
