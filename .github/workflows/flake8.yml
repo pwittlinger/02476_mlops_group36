@@ -23,7 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install -r requirements_tests.txt
-    - name: Install auto-formatter
+    - name: Run black
       run: |
         pip install black
         black .
