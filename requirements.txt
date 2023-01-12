@@ -3,7 +3,7 @@
 
 # external requirements
 click
-Sphinx>=6.1.3
+Sphinx
 coverage
 awscli==1.27.38
 flake8
