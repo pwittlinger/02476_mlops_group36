@@ -1,0 +1,7 @@
+# config_cpu.yaml
+workerPoolSpecs:
+   machineSpec:
+      machineType: n1-highmem-2
+   replicaCount: 1
+   containerSpec:
+      imageUri: gcr.io/mlopsg36/testing@sha256:ddade773e7fa8ae80a311ba8f3db36239ea0b58bbb446c2c996460ad0b6347d8
