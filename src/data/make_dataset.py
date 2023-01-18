@@ -3,7 +3,9 @@ import click
 import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
-
+from os.path import exists
+from notebooks.utility_functions import text_processing
+import pandas as pd
 
 @click.command()
 @click.argument('input_filepath', type=click.Path(exists=True))
@@ -14,6 +16,34 @@ def main(input_filepath, output_filepath):
     """
     logger = logging.getLogger(__name__)
     logger.info('making final data set from raw data')
+    file_check = checkForFile(input_filepath=input_filepath, output_filepath=output_filepath)
+    if not file_check[0]:
+        raise FileNotFoundError("File does not exists at input path")
+
+    data_ = pd.read_csv(input_filepath)
+    #print(data_.columns.values)
+    #print(data_.head()["highlights"].astype(str))
+    #print(data_.dtypes)
+    #print(text_processing(data_.iloc[0,1]))
+    #print(data_.iloc[0,1])
+    #print(data_.shape)
+    #print(text_processing(data_.head()["article"]))
+    #print(data_["article"].head().apply(text_processing))
+    data_["article"] = data_["article"].apply(text_processing)
+    data_.to_csv(output_filepath)
+    file_check = checkForFile(input_filepath=input_filepath, output_filepath=output_filepath)
+
+    if not file_check[1]:
+        raise FileNotFoundError("Something has gone wrong. File does not exist at output destination")
+
+
+
+def checkForFile(input_filepath:str, output_filepath:str):
+
+    return [exists(input_filepath), exists(output_filepath)]
+
+
+
 
 
 if __name__ == '__main__':

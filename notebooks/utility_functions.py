@@ -6,17 +6,17 @@
 import pandas as pd
 pd.set_option('display.max_colwidth',0)
 import numpy as np
-from numpy import hstack, asarray, vstack
+#from numpy import hstack, asarray, vstack
 
 import matplotlib.pyplot as plt
-from matplotlib import colors as mcolors
+#from matplotlib import colors as mcolors
 import random
 from os import listdir
-from collections import Counter
-from tqdm import tqdm
-from datetime import datetime
+#from collections import Counter
+#from tqdm import tqdm
+#from datetime import datetime
 
-import string
+#import string
 import re
 from string import punctuation
 import nltk
@@ -28,11 +28,11 @@ nltk.download("punkt")
 nltk.downloader.download("vader_lexicon")
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk import tokenize
+#from nltk.tokenize import word_tokenize
+#from nltk import tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 lemmatizer = WordNetLemmatizer()
-Stop_Words = stopwords
+Stop_Words = stopwords.words()
 
 
 from wordcloud import WordCloud
@@ -59,7 +59,7 @@ def show_wordcloud(data, column_n, title):
 def text_processing(text):
     # remove punctuation 
     text = "".join([c for c in text 
-                    if c not in string.punctuation])
+                    if c not in punctuation])
     # lowercase
     text = "".join([c.lower() for c in text])
     # remove stopwords
@@ -99,3 +99,7 @@ def get_sentiment_intensity(data_):
             sentiment.append("neutral")
 
     return sentiment
+
+
+def createBOW():
+    return True
