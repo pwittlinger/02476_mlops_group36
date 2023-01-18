@@ -1,5 +1,4 @@
 import os
-import sys
 
 import pandas as pd
 import pytest
@@ -11,12 +10,8 @@ from tests import _PATH_DATA
 def test_data():
     # load the trianing data
     raw_ = "/raw/"
-    assert os.path.exists(_PATH_DATA+raw_+"train.csv")
-    train_data = pd.read_csv(_PATH_DATA+raw_+"train.csv")
-
+    assert os.path.exists(_PATH_DATA + raw_ + "train.csv")
+    train_data = pd.read_csv(_PATH_DATA + raw_ + "train.csv")
 
     assert train_data.shape[1] == 3
-    assert train_data.columns.values == ['id', 'article', 'highlights']
-
-# assert that each datapoint has shape [1,28,28] or [728] depending on how you choose to format
-# assert that all labels are represented
+    assert train_data.columns.values == ["id", "article", "highlights"]
