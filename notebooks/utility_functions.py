@@ -4,40 +4,43 @@
 """
 
 import pandas as pd
-pd.set_option('display.max_colwidth',0)
-import numpy as np
-#from numpy import hstack, asarray, vstack
 
-import matplotlib.pyplot as plt
+pd.set_option('display.max_colwidth',0)
 #from matplotlib import colors as mcolors
 import random
+#import string
+import re
 from os import listdir
+from string import punctuation
+
+import matplotlib.pyplot as plt
+import nltk
+import numpy as np
+
+#from numpy import hstack, asarray, vstack
+
 #from collections import Counter
 #from tqdm import tqdm
 #from datetime import datetime
 
-#import string
-import re
-from string import punctuation
-import nltk
 
 nltk.download("punkt")
 nltk.download("stopwords")
 nltk.download("wordnet")
 nltk.download("punkt")
 nltk.downloader.download("vader_lexicon")
-from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 #from nltk.tokenize import word_tokenize
 #from nltk import tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.stem import WordNetLemmatizer
+
 lemmatizer = WordNetLemmatizer()
 Stop_Words = stopwords.words()
 
 
-from wordcloud import WordCloud
 import wordcloud
-
+from wordcloud import WordCloud
 
 
 def show_wordcloud(data, column_n, title):

@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
-import click
 import logging
-from pathlib import Path
-from dotenv import find_dotenv, load_dotenv
 from os.path import exists
-from notebooks.utility_functions import text_processing
+from pathlib import Path
+
+import click
 import pandas as pd
+from dotenv import find_dotenv, load_dotenv
+
+from notebooks.utility_functions import text_processing
+
 
 @click.command()
 @click.argument('input_filepath', type=click.Path(exists=True))
@@ -21,14 +24,9 @@ def main(input_filepath, output_filepath):
         raise FileNotFoundError("File does not exists at input path")
 
     data_ = pd.read_csv(input_filepath)
-    #print(data_.columns.values)
-    #print(data_.head()["highlights"].astype(str))
-    #print(data_.dtypes)
-    #print(text_processing(data_.iloc[0,1]))
-    #print(data_.iloc[0,1])
-    #print(data_.shape)
-    #print(text_processing(data_.head()["article"]))
-    #print(data_["article"].head().apply(text_processing))
+    
+    if "article" not in data_.columns.values:
+        raise KeyError("Key not found. Please check the data and try again.")
     data_["article"] = data_["article"].apply(text_processing)
     data_.to_csv(output_filepath)
     file_check = checkForFile(input_filepath=input_filepath, output_filepath=output_filepath)

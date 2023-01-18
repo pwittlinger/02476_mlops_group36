@@ -1,8 +1,8 @@
 import os
 import sys
 
-import pytest
 import pandas as pd
+import pytest
 
 from tests import _PATH_DATA
 
