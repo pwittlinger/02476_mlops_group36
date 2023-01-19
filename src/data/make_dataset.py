@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
-from os.path import exists
+import os.path
 from pathlib import Path
 
 import click
@@ -8,6 +8,7 @@ import pandas as pd
 from dotenv import find_dotenv, load_dotenv
 
 from notebooks.utility_functions import text_processing
+
 
 
 @click.command()
@@ -43,7 +44,10 @@ def main(input_filepath, output_filepath):
 
 def checkForFile(input_filepath: str, output_filepath: str):
 
-    return [exists(input_filepath), exists(output_filepath)]
+    return [os.path.exists(input_filepath), os.path.exists(output_filepath)]
+
+def download_files():
+
 
 
 if __name__ == "__main__":
