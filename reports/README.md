@@ -49,7 +49,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 1 fill here ---
+--- Group 36 ---
 
 ### Question 2
 > **Enter the study number for each member in the group**
@@ -60,7 +60,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 2 fill here ---
+--- s194727, s212460, s220051 ---
 
 ### Question 3
 > **What framework did you choose to work with and did it help you complete the project?**
@@ -73,7 +73,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 3 fill here ---
+--- We used the HuggingFace transformers framework.  ---
 
 ## Coding environment
 
@@ -92,7 +92,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 4 fill here ---
+--- As we needed to add new dependecies, we would install them in a specific environment created for the project, we would then list them into the requirements.txt file that we would update every time a new library was needed or every time one would not be needed anymore. To get a complete copy of our development enviroment, one would have to run the following commands : pip install -r requirements.txt---
 
 ### Question 5
 
@@ -107,7 +107,7 @@ be installed with `pip install click markdown`.
 > *experiments.*
 > Answer:
 
---- question 5 fill here ---
+--- From the cookiecutter template we have instantiated all the folders (docs, models, notebooks, references, reports, src, tests folder). We have removed the models, notebooks and references folder because we did not need them in our project. We have added a tests folder that contains unit tests for the project. ---
 
 ### Question 6
 
@@ -118,7 +118,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 6 fill here ---
+--- We did not implement any specific rules for code quality, however we made sure to follow good coding practices and we peer-reviewed each other's code in order to ensure readability. Good formating is especially important in big projects when several members will go over one's code and will have to easily understand it. These practices also ensure consistency along the project. ---
 
 ## Version control
 
@@ -161,7 +161,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 9 fill here ---
+--- We made use of both branches and PRs in our project. In our group, each member had an branch that they worked on in addition to the main branch. We also split the code into different features and alsthough the branches did ot necessarly reflect individual features, they mainly focused on sparate aspects of the project. Then once a feature was complete by a team member, a PR would be issued and review by the other members in order to be merged with the main branch. In the last stage of the project, we realized that the full scale of our project was not realistic and we decided to make a "Lite" version which would include the Minimum Viable Product. ---
 
 ### Question 10
 
@@ -176,7 +176,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 10 fill here ---
+--- We marginally made use of version control in our project for training and testing data. This also helped improve reproducibility of model training. It was also convenient to have because Github cannot host the data.  ---
 
 ### Question 11
 
@@ -192,7 +192,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 11 fill here ---
+--- Wa have several Github setup, mostly for sorting and linting, we also tried to integrate our tests but since our unit tests are limited, the results are not very meaningful. ---
 
 ## Running code and tracking experiments
 
@@ -258,7 +258,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 15 fill here ---
+--- For our projec, we mostly used Docker for inference and deployement. We used Docker to make predictions and handle curl requests and we also deployed it on GCP.---
 
 ### Question 16
 
@@ -273,7 +273,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 16 fill here ---
+--- Most of the coding was relatively trivial and did not require heavy debugging. This also means that we did not profile our code. This would have been very useful if we had included much more code and loads of functions. In that case profiling can become necessary for later debugging. ---
 
 ## Working in the cloud
 
@@ -290,7 +290,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 17 fill here ---
+--- The GCP services that we have used are: Bucket, Container Registry and Cloud Run. Bucker is used for, Container Registry is for and Cloud Run is for---
 
 ### Question 18
 
@@ -305,7 +305,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 18 fill here ---
+--- We would primarily use it for model training on GPU ---
 
 ### Question 19
 
@@ -348,7 +348,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 22 fill here ---
+--- We managed to deploy our model locally ---
 
 ### Question 23
 
@@ -363,7 +363,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 23 fill here ---
+--- We did not manage to implement monitoring. We would like to have monitoring implemented such that over time we could measure ... and ... that would inform us about this ... behaviour of our application. ---
 
 ### Question 24
 
@@ -377,7 +377,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 24 fill here ---
+--- Two out of the three students barely used any credits on their accounts since only some testing was done. However the third group member spend around ---
 
 ## Overall discussion of project
 
@@ -412,7 +412,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 26 fill here ---
+--- The most important challenge of this project was the management. We had a hard time distributing the tasks and communicating together. We also had the misfortune of losing a group member the last week of the course. All of that led to our group having to reduce the initial scope of the project. However, on the technical plane, we did not encouter tools that were of great challenge.   ---
 
 ### Question 27
 
@@ -429,4 +429,4 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 27 fill here ---
+--- Student s212460 took care of initializing the Github repository and setting up the cookie cutter project. Student s220051 was in charge of fine tunig the model and the hyperparameters. Student s194727 take over the responsibility of assembling and containerizing the project in order to deploy it. Moreover, all members contributed somewhat equally in coding and publishing code in the Github repository. ---
