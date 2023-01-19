@@ -1,0 +1,5 @@
+[core]
+    remote = storage
+    no_scm = true
+['remote "storage"']
+    url = gs://bucket-g36
