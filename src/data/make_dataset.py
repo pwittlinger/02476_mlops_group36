@@ -10,7 +10,6 @@ from dotenv import find_dotenv, load_dotenv
 from notebooks.utility_functions import text_processing
 
 
-
 @click.command()
 @click.argument("input_filepath", type=click.Path(exists=True))
 @click.argument("output_filepath", type=click.Path())
@@ -46,8 +45,9 @@ def checkForFile(input_filepath: str, output_filepath: str):
 
     return [os.path.exists(input_filepath), os.path.exists(output_filepath)]
 
-def download_files():
 
+def download_files():
+    return True
 
 
 if __name__ == "__main__":

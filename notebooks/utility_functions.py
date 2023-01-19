@@ -1,3 +1,5 @@
+from string import punctuation
+
 # -*- coding: utf-8 -*-
 """
 @author: paulw
@@ -6,23 +8,10 @@
 import pandas as pd
 
 pd.set_option("display.max_colwidth", 0)
-# from matplotlib import colors as mcolors
-import random
 
-# import string
-import re
-from os import listdir
-from string import punctuation
 
 import matplotlib.pyplot as plt
 import nltk
-import numpy as np
-
-# from numpy import hstack, asarray, vstack
-
-# from collections import Counter
-# from tqdm import tqdm
-# from datetime import datetime
 
 
 nltk.download("punkt")
@@ -42,7 +31,6 @@ Stop_Words = stopwords.words()
 
 
 import wordcloud
-from wordcloud import WordCloud
 
 
 def show_wordcloud(data, column_n, title):
