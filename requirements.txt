@@ -19,3 +19,6 @@ pathlib2
 
 # models
 transformers
+torch
+sentencepiece==0.1.97
+python-multipart
