@@ -303,8 +303,7 @@ Link to the deployed docker file <gcr.io/mlopsg36/pegreq-slim@sha256:4fbac31e222
 >
 > Answer:
 
---- The GCP services that we have used are: GCP Bucket, GCP Container Registry and GCP Cloud Run. Our Bucket is used for data storage, and we pull our trained model from there whenever we deploy a Docker Container. The Container Registry hosts the Containers we have build as described in Question 11
- and Cloud Run is for---
+--- The GCP services that we have used are: GCP Bucket, GCP Container Registry and GCP Cloud Run. Our Bucket is used for data storage, and we pull our trained model from there whenever we deploy a Docker Container. The Container Registry hosts the Containers we have build as described in Question 11. Lastly, Cloud Run is used for deploying the model as mentioned previously. The automatic integration with GitHub is quite useful for this task.---
 
 ### Question 18
 
@@ -319,8 +318,8 @@ Link to the deployed docker file <gcr.io/mlopsg36/pegreq-slim@sha256:4fbac31e222
 >
 > Answer:
 
---- We have not made use of the Compute Engine during our project. We would primarily use it for model training in combination with GPU support.
-For deploying the model we prefer the Cloud Run, as we do not need to manage the VMs ourself. ---
+--- We have not made use of the Compute Engine during our project. We would primarily use it for continuous model training, perhaps even in combination with GPU support.
+For deploying the model we prefer to make use of Cloud Run, as we do not need to manage the VMs ourself, and it scaled automatically. ---
 
 ### Question 19
 
@@ -329,7 +328,9 @@ For deploying the model we prefer the Cloud Run, as we do not need to manage the
 >
 > Answer:
 
---- question 19 fill here ---
+--- Since we used DVC in combination with our bucket, the files are organized kind of... different...
+However, we have our data and our trained model on there.
+[Image](figures/gcp_bucket_files_1.png) ---
 
 ### Question 20
 
@@ -397,7 +398,7 @@ The only form of montioring we have is provided by GCP, which tells us about the
 > Answer:
 
 --- As we didn't use GCP for training our model, we didn't spent that much money. In total it was less than 5$ (at the time of writing, approx. 4.5$). It is not that easy to say which service was the most expensive one, as the Dashboard does not show all accumulated costs.
-However, the Cloud Run instances were the only service that could contribute to that cost ---
+However, the Cloud Run instances were the only service that could contribute to that cost, as it was called on each push to our branch. Had we done model training on GCP as well, this would certainly have been the most expensive aspect. ---
 
 ## Overall discussion of project
 
@@ -432,7 +433,7 @@ However, the Cloud Run instances were the only service that could contribute to 
 >
 > Answer:
 
---- The most important challenge of this project was the management. We had a hard time distributing the tasks and communicating together, as well as keeping ourselves organized across the team. We also had the misfortune of losing a group member during the last week of the course. All of that led to our group having to reduce the initial scope of the project. However, on the technical plane, we did not encouter tools that were of great challenge. ---
+--- The most important challenge of this project was the management. We had a hard time distributing the tasks and communicating together, as well as keeping ourselves organized across the team. We also had the misfortune of losing a group member during the last week of the course. All of that led to our group having to reduce the initial scope of the project. However, regarding the technical aspect, we did not encounter tools that were of great challenge due to the reduced scope. Other than that, the integration of the project from model to containerization to deployment created was a notable challenge. ---
 
 ### Question 27
 
@@ -449,4 +450,4 @@ However, the Cloud Run instances were the only service that could contribute to 
 >
 > Answer:
 
---- Student s212460 took care of initializing the Github repository and setting up the cookie cutter project. Student s220051 was in charge of fine tunig the model and the hyperparameters. Student s194727 take over the responsibility of assembling and containerizing the project in order to deploy it. Moreover, all members contributed somewhat equally in coding and publishing code in the Github repository. ---
+--- Student s212460 took care of initializing the Github repository and setting up the cookie cutter project, alongside the CI pipeline and deployment on GCP. Student s220051 was in charge of fine tuning the model, including hyperparameter optimization and model performance (using WandB). Student s194727 took over the responsibility of assembling and containerizing the project in order to deploy it. Moreover, all members contributed somewhat equally in coding and publishing code in the Github repository. ---
