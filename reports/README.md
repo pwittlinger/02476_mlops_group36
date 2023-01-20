@@ -219,7 +219,7 @@ One run example of a triggered github action can be found here: <https://github.
 >
 > Answer:
 
---- question 12 fill here ---
+--- Our framework, after running, will automatically generate the config file, so we do not need to operate through the hydra mentioned in the course as for code， like this:arg ---
 
 ### Question 13
 
@@ -234,7 +234,7 @@ One run example of a triggered github action can be found here: <https://github.
 >
 > Answer:
 
---- question 13 fill here ---
+--- When we finish tuning the pre-trained model, there is a config file that holds all the tuned parameters, the model.pt contains that. This ensures that we use the same model every time.so we can get the same result. ---
 
 ### Question 14
 
@@ -251,7 +251,7 @@ One run example of a triggered github action can be found here: <https://github.
 >
 > Answer:
 
---- question 14 fill here ---
+--- figure1figure2figure3 wandb provides us with a lot of meaningful data when performing model training. the most important data for me is the hardware usage when running the training model, because our project model is large and our dataset is large, and the hardware requirements are high when training locally (for example, we had a MacBook that caused irreversible damage while running). wandb effectively documents The change of state when the hardware is in use. Also during the training process, the loss data in step and epoch, which can help us continue to optimize the hyperparameters (since the adjusted model works quite well, we did not continue to tune the parameters in a mundane way, we only trained a very limited number of times) ---
 
 ### Question 15
 
@@ -419,7 +419,7 @@ However, the Cloud Run instances were the only service that could contribute to 
 >
 > Answer:
 
---- question 25 fill here ---
+--- Fill Question 25 here ---
 
 ### Question 26
 
