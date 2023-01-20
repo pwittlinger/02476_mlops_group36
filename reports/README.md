@@ -419,8 +419,10 @@ However, the Cloud Run instances were the only service that could contribute to 
 >
 > Answer:
 
---- Our project architecture is very much similar to the one provided in the overview file. Our development was primarly done on our local machines, which was facilitated by using GitHub as version control. Upon pushing code to a branch with enabled workflows, GitHub Actions was executed for ensuring continuous integration and providing feedback on our code. Additionally we set up a trigger in GCP Container Registry to build a container from the latest push, which was supposed to be automatically deployed to Cloud Run. We did not integrate DockerHub as a resource (both because we got errors authenticating, and we set up a pipeline to Container Registry), so end-users cannot pull from there. They can, however, reproduce our containers using the Dockerfile provided in our repository.
-For model training we used our local machine as well, and performed a Hyper Parameter sweep using W&B.---
+--- Our project architecture is very much similar to the one provided in the overview file. Our development was done on our local machines, which was facilitated by using GitHub as version control. Upon pushing code (or other files) to a branch with enabled workflows, GitHub Actions were executed, in our case ensuring continuous integration and providing feedback on our code. This combines the topics from the module "Good coding practice" and Session 5's Continuous Integration. Additionally we set up a trigger in GCP Container Registry to build a container from the latest push, which was supposed to be automatically deployed to Cloud Run, which integrates continuous containers with cloud deply. We did not integrate DockerHub as a resource (both because we got errors authenticating, and we set up a pipeline to Container Registry), so end-users cannot pull from there. They can, however, reproduce our containers using the Dockerfile provided in our repository.
+For model training we used our local machine as well, and performed a Hyper Parameter sweep using W&B.
+If we had more time, we would have liked to set up automatic fine-tuning / re-learning of the model using Cloud ML. Whenever the app takes in a request from the users, they would have the possibility to provide feedback on the performance, which would then be used for further training. Data would get pushed on DVC again, becoming part of the overall dataset.
+An overview of the architecture as is can be seen [here](figures/architecture_as_is.png).---
 
 ### Question 26
 
