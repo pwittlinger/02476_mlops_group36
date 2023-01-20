@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 RUN dvc pull
 
 CMD exec uvicorn model_api:app --port $PORT --host 0.0.0.0 --workers 1
