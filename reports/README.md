@@ -419,7 +419,8 @@ However, the Cloud Run instances were the only service that could contribute to 
 >
 > Answer:
 
---- Fill Question 25 here ---
+--- Our project architecture is very much similar to the one provided in the overview file. Our development was primarly done on our local machines, which was facilitated by using GitHub as version control. Upon pushing code to a branch with enabled workflows, GitHub Actions was executed for ensuring continuous integration and providing feedback on our code. Additionally we set up a trigger in GCP Container Registry to build a container from the latest push, which was supposed to be automatically deployed to Cloud Run. We did not integrate DockerHub as a resource (both because we got errors authenticating, and we set up a pipeline to Container Registry), so end-users cannot pull from there. They can, however, reproduce our containers using the Dockerfile provided in our repository.
+For model training we used our local machine as well, and performed a Hyper Parameter sweep using W&B.---
 
 ### Question 26
 
