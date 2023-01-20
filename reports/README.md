@@ -73,7 +73,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We used the HuggingFace transformers framework.  ---
+--- We used the HuggingFace transformers framework for doing text summarization. Specifically, we used a pre-trained Pegasus model and finetuned it on additional data. Pegasus is using the tokenizer to process the input data. ---
 
 ## Coding environment
 
@@ -107,7 +107,7 @@ be installed with `pip install click markdown`.
 > *experiments.*
 > Answer:
 
---- From the cookiecutter template we have instantiated all the folders (docs, models, notebooks, references, reports, src, tests folder). We have removed the models, notebooks and references folder because we did not need them in our project. We have added a tests folder that contains unit tests for the project. ---
+--- From the cookiecutter template we have instantiated all the folders (docs, models, notebooks, references, reports, src, tests folder). We have removed the notebooks and references folder because we did not need them in our project. We have added a tests folder that contains unit tests for the project. ---
 
 ### Question 6
 
@@ -118,7 +118,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We did not implement any specific rules for code quality, however we made sure to follow good coding practices and we peer-reviewed each other's code in order to ensure readability. Good formating is especially important in big projects when several members will go over one's code and will have to easily understand it. These practices also ensure consistency along the project. ---
+--- We did not implement any specific rules for code quality, however we made sure to follow good coding practices and we peer-reviewed each other's code in order to ensure readability. Good formating is especially important in big projects when several members will go over one's code and will have to easily understand it. These practices also ensure consistency along the project. Moreover, our code was checked with black, an python auto-formatter which is pep8 compliant---
 
 ## Version control
 
@@ -131,7 +131,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 7 fill here ---
+--- We have skeletons for 3 tests, however these have not been implemented fully. ---
 
 ### Question 8
 
@@ -192,7 +192,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- Wa have several Github setup, mostly for sorting and linting, we also tried to integrate our tests but since our unit tests are limited, the results are not very meaningful. ---
+--- Wa have several Github setup, mostly for sorting and linting, we also tried to integrate our tests but since our unit tests are limited, the results are not very meaningful. Nonetheless we test on several python versions. ---
 
 ## Running code and tracking experiments
 
@@ -258,7 +258,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- For our projec, we mostly used Docker for inference and deployement. We used Docker to make predictions and handle curl requests and we also deployed it on GCP.---
+--- For our project, we mostly used Docker for inference and deployement. We used Docker to make predictions and handle curl requests and we also deployed it on GCP. ---
 
 ### Question 16
 
@@ -305,7 +305,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We would primarily use it for model training on GPU ---
+--- We have not made use of the Compute Engine during our project. We would primarily use it for model training in combination with GPU support.
+For deploying the model we prefer the Cloud Run, as we do not need to manage the VMs ourself. ---
 
 ### Question 19
 
@@ -348,7 +349,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We managed to deploy our model locally ---
+--- We managed to deploy our model locally. Given either a string on a curl request or a file containing said string, it will return a summarization of the string.
+  *curl --header "Content-Type: application/json" --request POST --data '{"content":"string"}' http://127.0.0.1:8000/bert*---
 
 ### Question 23
 
@@ -363,7 +365,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We did not manage to implement monitoring. We would like to have monitoring implemented such that over time we could measure ... and ... that would inform us about this ... behaviour of our application. ---
+--- We did not manage to implement monitoring. We would like to have monitoring implemented such that over time we could measure the performance in terms of rouge score, as well as the general usage of our model. This would inform us about the needs of our users, which would lead us to consider additional features.
+  Moreover, we would like to know statistics on the input of our users, so we can see if there is a data drift (e.g. longer texts, different languages). ---
 
 ### Question 24
 
