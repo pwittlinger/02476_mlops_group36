@@ -73,7 +73,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We used the HuggingFace transformers framework for doing text summarization. Specifically, we used a pre-trained Pegasus model and finetuned it on additional data. Pegasus is using the tokenizer to process the input data. ---
+--- We used the HuggingFace transformers framework for doing text summarization. Specifically, we used a pre-trained Pegasus model and fine-tuned it on additional data. Pegasus is using the tokenizer library to process the input data. ---
 
 ## Coding environment
 
@@ -92,7 +92,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- As we needed to add new dependecies, we would install them in a specific environment created for the project, we would then list them into the requirements.txt file that we would update every time a new library was needed or every time one would not be needed anymore. To get a complete copy of our development enviroment, one would have to run the following commands : pip install -r requirements.txt---
+--- As we needed to add new dependecies, we would install them in a specific environment created for the project, we would then list them into the requirements.txt file that we would update every time a new library was needed or every time one would not be needed anymore. To get a complete copy of our development enviroment, one would have to run the following commands : pip install -r requirements.txt.
+This should be run in a new environment to ensure only the necessary packages are installed, as well as keeping versioning correct.---
 
 ### Question 5
 
@@ -118,7 +119,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We did not implement any specific rules for code quality, however we made sure to follow good coding practices and we peer-reviewed each other's code in order to ensure readability. Good formating is especially important in big projects when several members will go over one's code and will have to easily understand it. These practices also ensure consistency along the project. Moreover, our code was checked with black, an python auto-formatter which is pep8 compliant---
+--- We did not implement any specific rules for code quality, however we made sure to follow good coding practices and we peer-reviewed each other's code in order to ensure readability. Good formating is especially important in big projects when several members will go over one's code and will have to easily understand it. These practices also ensure consistency along the project. Moreover, our code was checked with black, an python auto-formatter which is pep8 compliant.---
 
 ## Version control
 
@@ -131,7 +132,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We have skeletons for 3 tests, however these have not been implemented fully. ---
+--- We have skeletons for 3 tests, however these have not been implemented fully.
+The idea is to check the input (shape, exists) to ensure reproducible results. For the model the idea would be to check for correct hyperparameters instantiation. ---
 
 ### Question 8
 
@@ -146,7 +148,9 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 8 fill here ---
+--- The total coverage is 100% - which seems great to report if it wasn't for the fact that our tests are not properly implemented. It is not testing out entire code-base, and the tests
+that we do have are very rudamentary (e.g. check shape of the data, is the model loaded correctly), thus coverage is not a meaningful metric in our project.
+Moreover, if there are errors in the code that we have not written tests on, this will not be reported on the coverage report. Exactly these parts of our codebase,however, are more prone to error if nobody took responsibility of maintaining them. ---
 
 ### Question 9
 
@@ -161,7 +165,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We made use of both branches and PRs in our project. In our group, each member had an branch that they worked on in addition to the main branch. We also split the code into different features and alsthough the branches did ot necessarly reflect individual features, they mainly focused on sparate aspects of the project. Then once a feature was complete by a team member, a PR would be issued and review by the other members in order to be merged with the main branch. In the last stage of the project, we realized that the full scale of our project was not realistic and we decided to make a "Lite" version which would include the Minimum Viable Product. ---
+--- We made use of both branches and PRs in our project. In our group, each member had an branch that they worked on in addition to the main branch. We also split the code into different features and although the branches did ot necessarily reflect individual features, they mainly focused on sparate aspects of the project. Then once a feature was complete by a team member, a PR would be issued and review by the other members in order to be merged with the main branch. In the last stage of the project, we realized that the full scale of our project was not realistic and we decided to make a "Lite" version which would include the Minimum Viable Product. ---
 
 ### Question 10
 
@@ -176,7 +180,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- We marginally made use of version control in our project for training and testing data. This also helped improve reproducibility of model training. It was also convenient to have because Github cannot host the data.  ---
+--- We marginally made use of version control in our project for training and testing data. This also helped improve reproducibility of model training. It was also convenient to have because Github cannot host the data, and our instantiated model is too large to save on github as well. Given the time we would like to expand the usage of DVC by adding data to our GCP buckets generated by the requests our model receives. Ideally, this would then retrigger the fine-tuning process and host a new version of our parametrized model on DVC   ---
 
 ### Question 11
 
@@ -192,7 +196,10 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- Wa have several Github setup, mostly for sorting and linting, we also tried to integrate our tests but since our unit tests are limited, the results are not very meaningful. Nonetheless we test on several python versions. ---
+--- We have several Github Actions setup, which includes code formatting (using isort, black, and flake8) in order to ensure readability and adherence to good coding practice.
+Furthermore, we also integrated our unit-tests into an action, but since our unit tests are limited, the results are not very meaningful.  At first we ran these tests only on Python 3.8, but expanded this later to test from python 3.7 - 3.10.
+Lastly, we set up a CI pipeline, which automatically builds a Docker Container and pushes that to the GCP Container registry, whenever a push is made on the main-branch. Ideally, this would then automatically deploy the newest (tested) version of our container, thus providing our app with the latest release.
+In order to use that we needed to authenticate GCP with GitHub using Secrets (with the corresponding Access tokens)---
 
 ## Running code and tracking experiments
 
@@ -290,7 +297,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- The GCP services that we have used are: Bucket, Container Registry and Cloud Run. Bucker is used for, Container Registry is for and Cloud Run is for---
+--- The GCP services that we have used are: GCP Bucket, GCP Container Registry and GCP Cloud Run. Our Bucket is used for data storage, and we pull our trained model from there whenever we deploy a Docker Container. The Container Registry hosts the Containers we have build as described in Question 11
+ and Cloud Run is for---
 
 ### Question 18
 
