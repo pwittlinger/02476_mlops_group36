@@ -198,8 +198,9 @@ Moreover, if there are errors in the code that we have not written tests on, thi
 
 --- We have several Github Actions setup, which includes code formatting (using isort, black, and flake8) in order to ensure readability and adherence to good coding practice.
 Furthermore, we also integrated our unit-tests into an action, but since our unit tests are limited, the results are not very meaningful.  At first we ran these tests only on Python 3.8, but expanded this later to test from python 3.7 - 3.10.
-Lastly, we set up a CI pipeline, which automatically builds a Docker Container and pushes that to the GCP Container registry, whenever a push is made on the main-branch. Ideally, this would then automatically deploy the newest (tested) version of our container, thus providing our app with the latest release.
-In order to use that we needed to authenticate GCP with GitHub using Secrets (with the corresponding Access tokens)---
+Lastly, we set up a CI pipeline, which automatically builds a Docker Container. At first we tried to integrate that into DockerHub, but then opted for the Container Registry to expand the pipeline coverage. Whenever a push is made on the main-branch, a container gets build and automatically pushed to the Container registry. Ideally, this would then automatically deploy the newest (tested) version of our container, thus providing our app with the latest release. However, this could not be achieved, as the containers build via this integration could not be deployed.
+In order to use that we needed to authenticate GCP with GitHub using Secrets (with the corresponding Access tokens).
+One run example of a triggered github action can be found here: <https://github.com/pwittlinger/02476_mlops_group36/actions/runs/3969290369>, and the log from one of the GCP runs can be found under the file <reports\log-bcc4f65e-4371-44c0-9138-69ee25b411fe.txt>---
 
 ## Running code and tracking experiments
 
@@ -265,7 +266,12 @@ In order to use that we needed to authenticate GCP with GitHub using Secrets (wi
 >
 > Answer:
 
---- For our project, we mostly used Docker for inference and deployement. We used Docker to make predictions and handle curl requests and we also deployed it on GCP. ---
+--- For our project, we used Docker primarily for inference and deployement. We used Docker containers to deploy our model on GCP, in order to make predictions and handle curl requests usign GCP Cloud Run. This is achieved using the FastAPI interface in combination with uvicorn.
+These deployment containers download our trained model from DVC and provide an api to interact with the model. Even though we tried to keep the containers as lightweight as possible, they accumulated a size of approximately 13 GB locally.
+We have not utilized Docker for training purposes during our project. However, ideally we would have liked to create a separate container which can handle model training, in order to fine-tune the model on the data we gather from requests. 
+
+If you would like to run our container locally you can run the command `docker run --name <container_name> -p 80:80 <image>`, which will start up the container, start FastAPI and expose the corresponding ports (specified with -p).
+Link to the deployed docker file <gcr.io/mlopsg36/pegreq-slim@sha256:4fbac31e222aff60b1ed41ff040bfbae5f4fe07371ddfa330be3d9c48ee9ce4c> ---
 
 ### Question 16
 
