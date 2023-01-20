@@ -210,7 +210,7 @@ be installed with `pip install click markdown`.
 > *We used a simple argparser, that worked in the following way: python my_script.py --lr 1e-3 --batch_size 25*
 >
 > Answer:Our framework, after running, will automatically generate the config file, so we do not need to operate through the hydra mentioned in the course
-as for code， like this:![arg](figures/<arg>.<png>)
+as for code， like this:[arg](figures/arg.png)
 
 --- question 12 fill here ---
 
