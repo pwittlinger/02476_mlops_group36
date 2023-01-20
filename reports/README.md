@@ -338,7 +338,7 @@ For deploying the model we prefer the Cloud Run, as we do not need to manage the
 >
 > Answer:
 
---- question 20 fill here ---
+--- [Image](figures/gcp_registry.png) ---
 
 ### Question 21
 
@@ -347,7 +347,7 @@ For deploying the model we prefer the Cloud Run, as we do not need to manage the
 >
 > Answer:
 
---- question 21 fill here ---
+--- [Image](figures/gcp_cloud_build_history.png) ---
 
 ### Question 22
 
