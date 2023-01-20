@@ -49,7 +49,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 1 fill here ---
+--- Group 36 ---
 
 ### Question 2
 > **Enter the study number for each member in the group**
@@ -60,7 +60,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 2 fill here ---
+--- s194727, s212460, s220051 ---
 
 ### Question 3
 > **What framework did you choose to work with and did it help you complete the project?**
@@ -73,7 +73,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 3 fill here ---
+--- We used the HuggingFace transformers framework for doing text summarization. Specifically, we used a pre-trained Pegasus model and fine-tuned it on additional data. Pegasus is using the tokenizer library to process the input data. ---
 
 ## Coding environment
 
@@ -92,7 +92,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 4 fill here ---
+--- As we needed to add new dependecies, we would install them in a specific environment created for the project, we would then list them into the requirements.txt file that we would update every time a new library was needed or every time one would not be needed anymore. To get a complete copy of our development enviroment, one would have to run the following commands : pip install -r requirements.txt.
+This should be run in a new environment to ensure only the necessary packages are installed, as well as keeping versioning correct.---
 
 ### Question 5
 
@@ -107,7 +108,7 @@ be installed with `pip install click markdown`.
 > *experiments.*
 > Answer:
 
---- question 5 fill here ---
+--- From the cookiecutter template we have instantiated all the folders (docs, models, notebooks, references, reports, src, tests folder). We have removed the notebooks and references folder because we did not need them in our project. We have added a tests folder that contains unit tests for the project. ---
 
 ### Question 6
 
@@ -118,7 +119,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 6 fill here ---
+--- We did not implement any specific rules for code quality, however we made sure to follow good coding practices and we peer-reviewed each other's code in order to ensure readability. Good formating is especially important in big projects when several members will go over one's code and will have to easily understand it. These practices also ensure consistency along the project. Moreover, our code was checked with black, an python auto-formatter which is pep8 compliant.---
 
 ## Version control
 
@@ -131,7 +132,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 7 fill here ---
+--- We have skeletons for 3 tests, however these have not been implemented fully.
+The idea is to check the input (shape, exists) to ensure reproducible results. For the model the idea would be to check for correct hyperparameters instantiation. ---
 
 ### Question 8
 
@@ -146,7 +148,9 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 8 fill here ---
+--- The total coverage is 100% - which seems great to report if it wasn't for the fact that our tests are not properly implemented. It is not testing out entire code-base, and the tests
+that we do have are very rudamentary (e.g. check shape of the data, is the model loaded correctly), thus coverage is not a meaningful metric in our project.
+Moreover, if there are errors in the code that we have not written tests on, this will not be reported on the coverage report. Exactly these parts of our codebase,however, are more prone to error if nobody took responsibility of maintaining them. ---
 
 ### Question 9
 
@@ -161,7 +165,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 9 fill here ---
+--- We made use of both branches and PRs in our project. In our group, each member had an branch that they worked on in addition to the main branch. We also split the code into different features and although the branches did ot necessarily reflect individual features, they mainly focused on sparate aspects of the project. Then once a feature was complete by a team member, a PR would be issued and review by the other members in order to be merged with the main branch. In the last stage of the project, we realized that the full scale of our project was not realistic and we decided to make a "Lite" version which would include the Minimum Viable Product. ---
 
 ### Question 10
 
@@ -176,7 +180,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 10 fill here ---
+--- We marginally made use of version control in our project for training and testing data. This also helped improve reproducibility of model training. It was also convenient to have because Github cannot host the data, and our instantiated model is too large to save on github as well. Given the time we would like to expand the usage of DVC by adding data to our GCP buckets generated by the requests our model receives. Ideally, this would then retrigger the fine-tuning process and host a new version of our parametrized model on DVC   ---
 
 ### Question 11
 
@@ -192,7 +196,11 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 11 fill here ---
+--- We have several Github Actions setup, which includes code formatting (using isort, black, and flake8) in order to ensure readability and adherence to good coding practice.
+Furthermore, we also integrated our unit-tests into an action, but since our unit tests are limited, the results are not very meaningful.  At first we ran these tests only on Python 3.8, but expanded this later to test from python 3.7 - 3.10.
+Lastly, we set up a CI pipeline, which automatically builds a Docker Container. At first we tried to integrate that into DockerHub, but then opted for the Container Registry to expand the pipeline coverage. Whenever a push is made on the main-branch, a container gets build and automatically pushed to the Container registry. Ideally, this would then automatically deploy the newest (tested) version of our container, thus providing our app with the latest release. However, this could not be achieved, as the containers build via this integration could not be deployed.
+In order to use that we needed to authenticate GCP with GitHub using Secrets (with the corresponding Access tokens).
+One run example of a triggered github action can be found here: <https://github.com/pwittlinger/02476_mlops_group36/actions/runs/3969290369>, and the log from one of the GCP runs can be found under the file <reports\log-bcc4f65e-4371-44c0-9138-69ee25b411fe.txt>---
 
 ## Running code and tracking experiments
 
@@ -211,7 +219,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 12 fill here ---
+--- Our framework, after running, will automatically generate the config file, so we do not need to operate through the hydra mentioned in the course as for code， like this:[arg](figures/arg.png) ---
 
 ### Question 13
 
@@ -226,7 +234,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 13 fill here ---
+--- When we finish tuning the pre-trained model, there is a config file that holds all the tuned parameters, the model.pt contains [that](figures/model.png). This ensures that we use the same model every time.so we can get the same result. ---
 
 ### Question 14
 
@@ -243,7 +251,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 14 fill here ---
+--- wandb provides us with a lot of meaningful data when performing model training, as can be seen in [figure1](figures/wb1.png), [figure2](figures/wb2.png) and [figure3](figures/wb3.png). the most important data for me is the hardware usage when running the training model, because our project model is large and our dataset is large, and the hardware requirements are high when training locally (for example, we had a MacBook that caused irreversible damage while running). wandb effectively documents The change of state when the hardware is in use. Also during the training process, the loss data in step and epoch, which can help us continue to optimize the hyperparameters (since the adjusted model works quite well, we did not continue to tune the parameters in a mundane way, we only trained a very limited number of times) ---
 
 ### Question 15
 
@@ -258,7 +266,12 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 15 fill here ---
+--- For our project, we used Docker primarily for inference and deployement. We used Docker containers to deploy our model on GCP, in order to make predictions and handle curl requests usign GCP Cloud Run. This is achieved using the FastAPI interface in combination with uvicorn.
+These deployment containers download our trained model from DVC and provide an api to interact with the model. Even though we tried to keep the containers as lightweight as possible, they accumulated a size of approximately 13 GB locally.
+We have not utilized Docker for training purposes during our project. However, ideally we would have liked to create a separate container which can handle model training, in order to fine-tune the model on the data we gather from requests. 
+
+If you would like to run our container locally you can run the command `docker run --name <container_name> -p 80:80 <image>`, which will start up the container, start FastAPI and expose the corresponding ports (specified with -p).
+Link to the deployed docker file <gcr.io/mlopsg36/pegreq-slim@sha256:4fbac31e222aff60b1ed41ff040bfbae5f4fe07371ddfa330be3d9c48ee9ce4c> ---
 
 ### Question 16
 
@@ -273,7 +286,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 16 fill here ---
+--- Most of the coding was relatively trivial and did not require heavy debugging. This also means that we did not profile our code. This would have been very useful if we had included much more code and loads of functions. In that case profiling can become necessary for later debugging. ---
 
 ## Working in the cloud
 
@@ -290,7 +303,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 17 fill here ---
+--- The GCP services that we have used are: GCP Bucket, GCP Container Registry and GCP Cloud Run. Our Bucket is used for data storage, and we pull our trained model from there whenever we deploy a Docker Container. The Container Registry hosts the Containers we have build as described in Question 11. Lastly, Cloud Run is used for deploying the model as mentioned previously. The automatic integration with GitHub is quite useful for this task.---
 
 ### Question 18
 
@@ -305,7 +318,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 18 fill here ---
+--- We have not made use of the Compute Engine during our project. We would primarily use it for continuous model training, perhaps even in combination with GPU support.
+For deploying the model we prefer to make use of Cloud Run, as we do not need to manage the VMs ourself, and it scaled automatically. ---
 
 ### Question 19
 
@@ -314,7 +328,9 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 19 fill here ---
+--- Since we used DVC in combination with our bucket, the files are organized kind of... different...
+However, we have our data and our trained model on there.
+[Image](figures/gcp_bucket_files_1.png) ---
 
 ### Question 20
 
@@ -323,7 +339,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 20 fill here ---
+--- [Image](figures/gcp_registry.png) ---
 
 ### Question 21
 
@@ -332,7 +348,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 21 fill here ---
+--- [Image](figures/gcp_cloud_build_history.png) ---
 
 ### Question 22
 
@@ -348,7 +364,10 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 22 fill here ---
+--- We managed to deploy our model locally, as well as on Cloud Run. Given either a string on a curl request or a file containing said string, it will return a summarization of the string.
+    Initially, we first tested our application on our local machines, and after having successfully deployed it there, we adapted the docker container to handle the required ports from GCP (should listen to $PORT)
+  If you want to interact with the model using the string, you can use the following command *curl --header "Content-Type: application/json" --request POST --data '{"content":"string"}' http://127.0.0.1:8000/bert*
+  If you wanted to use the API to handle files, you would instead use this command *curl -X 'POST' 'https://pegreq-slim-mvmryomhra-ew.a.run.app/bert-file/' -H 'accept: application/json'  -H 'Content-Type: multipart/form-data' -F 'file=@text.txt'*---
 
 ### Question 23
 
@@ -363,7 +382,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 23 fill here ---
+--- We did not manage to implement monitoring. We would like to have monitoring implemented such that over time we could measure the performance in terms of rouge score, as well as the general usage of our model. This would inform us about the needs of our users, which would lead us to consider additional features. Moreover, we would like to know statistics on the input of our users, so we can see if there is a data drift (e.g. are user inputing longer texts than expected, do they invoke different languages).
+The only form of montioring we have is provided by GCP, which tells us about the traffic to our app. This can be seen in the dashboard for our Cloud Run application. ---
 
 ### Question 24
 
@@ -377,7 +397,8 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 24 fill here ---
+--- As we didn't use GCP for training our model, we didn't spent that much money. In total it was less than 5$ (at the time of writing, approx. 4.5$). It is not that easy to say which service was the most expensive one, as the Dashboard does not show all accumulated costs.
+However, the Cloud Run instances were the only service that could contribute to that cost, as it was called on each push to our branch. Had we done model training on GCP as well, this would certainly have been the most expensive aspect. ---
 
 ## Overall discussion of project
 
@@ -398,7 +419,10 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 25 fill here ---
+--- Our project architecture is very much similar to the one provided in the overview file. Our development was done on our local machines, which was facilitated by using GitHub as version control. Upon pushing code (or other files) to a branch with enabled workflows, GitHub Actions were executed, in our case ensuring continuous integration and providing feedback on our code. This combines the topics from the module "Good coding practice" and Session 5's Continuous Integration. Additionally we set up a trigger in GCP Container Registry to build a container from the latest push, which was supposed to be automatically deployed to Cloud Run, which integrates continuous containers with cloud deply. We did not integrate DockerHub as a resource (both because we got errors authenticating, and we set up a pipeline to Container Registry), so end-users cannot pull from there. They can, however, reproduce our containers using the Dockerfile provided in our repository.
+For model training we used our local machine as well, and performed a Hyper Parameter sweep using W&B.
+If we had more time, we would have liked to set up automatic fine-tuning / re-learning of the model using Cloud ML. Whenever the app takes in a request from the users, they would have the possibility to provide feedback on the performance, which would then be used for further training. Data would get pushed on DVC again, becoming part of the overall dataset.
+An overview of the architecture as is can be seen [here](figures/architecture_as_is.png).---
 
 ### Question 26
 
@@ -412,7 +436,7 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 26 fill here ---
+--- The most important challenge of this project was the management. We had a hard time distributing the tasks and communicating together, as well as keeping ourselves organized across the team. We also had the misfortune of losing a group member during the last week of the course. All of that led to our group having to reduce the initial scope of the project. However, regarding the technical aspect, we did not encounter tools that were of great challenge due to the reduced scope. Other than that, the integration of the project from model to containerization to deployment created was a notable challenge. ---
 
 ### Question 27
 
@@ -429,4 +453,4 @@ be installed with `pip install click markdown`.
 >
 > Answer:
 
---- question 27 fill here ---
+--- Student s212460 took care of initializing the Github repository and setting up the cookie cutter project, alongside the CI pipeline and deployment on GCP. Student s220051 was in charge of fine tuning the model, including hyperparameter optimization and model performance (using WandB). Student s194727 took over the responsibility of assembling and containerizing the project in order to deploy it. Moreover, all members contributed somewhat equally in coding and publishing code in the Github repository. ---
