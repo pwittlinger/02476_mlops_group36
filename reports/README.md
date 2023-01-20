@@ -363,8 +363,10 @@ For deploying the model we prefer the Cloud Run, as we do not need to manage the
 >
 > Answer:
 
---- We managed to deploy our model locally. Given either a string on a curl request or a file containing said string, it will return a summarization of the string.
-  *curl --header "Content-Type: application/json" --request POST --data '{"content":"string"}' http://127.0.0.1:8000/bert*---
+--- We managed to deploy our model locally, as well as on Cloud Run. Given either a string on a curl request or a file containing said string, it will return a summarization of the string.
+    Initially, we first tested our application on our local machines, and after having successfully deployed it there, we adapted the docker container to handle the required ports from GCP (should listen to $PORT)
+  If you want to interact with the model using the string, you can use the following command *curl --header "Content-Type: application/json" --request POST --data '{"content":"string"}' http://127.0.0.1:8000/bert*
+  If you wanted to use the API to handle files, you would instead use this command *curl -X 'POST' 'https://pegreq-slim-mvmryomhra-ew.a.run.app/bert-file/' -H 'accept: application/json'  -H 'Content-Type: multipart/form-data' -F 'file=@text.txt'*---
 
 ### Question 23
 
@@ -379,8 +381,8 @@ For deploying the model we prefer the Cloud Run, as we do not need to manage the
 >
 > Answer:
 
---- We did not manage to implement monitoring. We would like to have monitoring implemented such that over time we could measure the performance in terms of rouge score, as well as the general usage of our model. This would inform us about the needs of our users, which would lead us to consider additional features.
-  Moreover, we would like to know statistics on the input of our users, so we can see if there is a data drift (e.g. longer texts, different languages). ---
+--- We did not manage to implement monitoring. We would like to have monitoring implemented such that over time we could measure the performance in terms of rouge score, as well as the general usage of our model. This would inform us about the needs of our users, which would lead us to consider additional features. Moreover, we would like to know statistics on the input of our users, so we can see if there is a data drift (e.g. are user inputing longer texts than expected, do they invoke different languages).
+The only form of montioring we have is provided by GCP, which tells us about the traffic to our app. This can be seen in the dashboard for our Cloud Run application. ---
 
 ### Question 24
 
@@ -394,7 +396,8 @@ For deploying the model we prefer the Cloud Run, as we do not need to manage the
 >
 > Answer:
 
---- Two out of the three students barely used any credits on their accounts since only some testing was done. However the third group member spend around ---
+--- As we didn't use GCP for training our model, we didn't spent that much money. In total it was less than 5$ (at the time of writing, approx. 4.5$). It is not that easy to say which service was the most expensive one, as the Dashboard does not show all accumulated costs.
+However, the Cloud Run instances were the only service that could contribute to that cost ---
 
 ## Overall discussion of project
 
@@ -429,7 +432,7 @@ For deploying the model we prefer the Cloud Run, as we do not need to manage the
 >
 > Answer:
 
---- The most important challenge of this project was the management. We had a hard time distributing the tasks and communicating together. We also had the misfortune of losing a group member the last week of the course. All of that led to our group having to reduce the initial scope of the project. However, on the technical plane, we did not encouter tools that were of great challenge.   ---
+--- The most important challenge of this project was the management. We had a hard time distributing the tasks and communicating together, as well as keeping ourselves organized across the team. We also had the misfortune of losing a group member during the last week of the course. All of that led to our group having to reduce the initial scope of the project. However, on the technical plane, we did not encouter tools that were of great challenge. ---
 
 ### Question 27
 
