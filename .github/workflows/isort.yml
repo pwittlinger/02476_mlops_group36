@@ -2,9 +2,9 @@ name: "Check Import sorting"
 
 on:
   push:
-    branches: [ master, main]
+    branches: [ master, main, Lite]
   pull_request:
-    branches: [ master, main]
+    branches: [ master, main, Lite]
 
 jobs:
   build:

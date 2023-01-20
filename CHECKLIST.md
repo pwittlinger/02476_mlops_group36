@@ -31,7 +31,7 @@ point on the checklist for the exam.
 - [x] Get some continues integration running on the github repository
 - [x] (optional) Create a new project on `gcp` and invite all group members to it
 - [x] Create a data storage on `gcp` for you data
-- [ ] Create a trigger workflow for automatically building your docker images
+- [x] Create a trigger workflow for automatically building your docker images (builds it, but errors in building)
 - [ ] Get your model training on `gcp`
 - [x] Play around with distributed data loading
 - [ ] (optional) Play around with distributed model training
