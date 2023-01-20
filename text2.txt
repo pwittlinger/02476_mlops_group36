@@ -1,0 +1,11 @@
+"""C'est un texte très attendu, alors que la guerre en Ukraine a mis en lumière des faiblesses dans le dispositif militaire français. Le président Emmanuel Macron dévoile vendredi 20 janvier les grandes orientations de la future loi de programmation militaire 2024-2030, placée sous le signe de la "transformation des armées" sur fond de retour de la guerre en Europe.
+
+Le chef de l'État évoquera la nouvelle LPM lors de ses vœux aux armées, à 11 h 45, sur la base aérienne de Mont-de-Marsan (Landes). Un discours à suivre en direct sur France 24.
+
+Cette loi, qui sera présentée au Parlement en mars, promet de poursuivre l'effort financier en matière de défense après une LPM 2019-2025 de 295 milliards d'euros, qui avait mis fin à des années de coupes budgétaires dans les armées.
+
+"On passe d'une logique de réparation à une logique de transformation des armées. On doit pouvoir être plus efficace et performant", souligne l'Élysée.
+
+Le chef de l'État pourrait préciser ce vendredi le montant qu'il entend consacrer à la défense sur les sept prochaines années, qui pourrait dépasser les 400 milliards. Une forte hausse budgétaire toutefois tempérée par l'inflation et l'explosion des coûts de l'énergie.
+
+La guerre en Ukraine a poussé les Européens les plus rétifs à consacrer plus d'argent à leur défense. L'Allemagne a débloqué l'an dernier 100 milliards d'euros pour moderniser ses armées."""
