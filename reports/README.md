@@ -225,7 +225,7 @@ as for code， like this:[arg](figures/arg.png)
 > *We made use of config files. Whenever an experiment is run the following happens: ... . To reproduce an experiment*
 > *one would have to do ...*
 >
-> Answer:
+> Answer:When we finish tuning the pre-trained model, there is a config file that holds all the tuned parameters, the model.pt contains [that](figures/model.png). This ensures that we use the same model every time.so we can get the same result.
 
 --- question 13 fill here ---
 
@@ -242,7 +242,7 @@ as for code， like this:[arg](figures/arg.png)
 > *As seen in the first image when have tracked ... and ... which both inform us about ... in our experiments.*
 > *As seen in the second image we are also tracking ... and ...*
 >
-> Answer:
+> Answer: [figure1](figures/wb1.png)[figure2](figures/wb2.png)
 
 --- question 14 fill here ---
 
