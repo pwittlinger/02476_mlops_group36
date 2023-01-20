@@ -242,7 +242,9 @@ as for code， like this:[arg](figures/arg.png)
 > *As seen in the first image when have tracked ... and ... which both inform us about ... in our experiments.*
 > *As seen in the second image we are also tracking ... and ...*
 >
-> Answer: [figure1](figures/wb1.png)[figure2](figures/wb2.png)
+> Answer: [figure1](figures/wb1.png)[figure2](figures/wb2.png)[figure3](figures/wb3.png)
+wandb provides us with a lot of meaningful data when performing model training. the most important data for me is the hardware usage when running the training model, because our project model is large and our dataset is large, and the hardware requirements are high when training locally (for example, we had a MacBook that caused irreversible damage while running). wandb effectively documents
+The change of state when the hardware is in use. Also during the training process, the loss data in step and epoch, which can help us continue to optimize the hyperparameters (since the adjusted model works quite well, we did not continue to tune the parameters in a mundane way, we only trained a very limited number of times)
 
 --- question 14 fill here ---
 
